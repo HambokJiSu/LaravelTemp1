@@ -64,3 +64,16 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## 찬 추가
+
+.env
+SESSION_DRIVER=database
+일 경우
+
+php artisan migrate
+명령어를 통해 해당 DB에 users, cache, jobs 테이블 생성이 필요
+
+서버 실행
+php artisan serve

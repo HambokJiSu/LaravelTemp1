@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Test;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TestController extends Controller
 {
@@ -17,6 +18,17 @@ class TestController extends Controller
     public function getData()
     {
         $data = Test::select('COL1', 'COL2', 'COL3')->get();
+        return response()->json($data);
+    }
+
+    // 새로운 데이터 조회 메소드
+    public function getData2()
+    {
+        $data = DB::select("
+        SELECT	COL1, COL2, CONCAT(COL2, '_', COL3) AS COL3
+        FROM	tb_test
+        LIMIT 5
+        ");
         return response()->json($data);
     }
 }

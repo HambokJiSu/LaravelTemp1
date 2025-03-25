@@ -18,7 +18,7 @@
     <script type="text/javascript">
         // Tabulator 테이블 초기화
         var table = new Tabulator("#test-table", {
-            ajaxURL: "{{ route('test.data') }}", // 데이터를 가져올 URL
+            ajaxURL: "{{ route('test.data2') }}", // 데이터를 가져올 URL
             layout: "fitColumns",
             pagination: true,
             paginationSize: 10,
